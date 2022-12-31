@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700;6..96,900&family=Calligraffitti&family=Gruppo&family=Heebo:wght@100;200;300;400;500&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.nav {
+  position: relative;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Noto Sans Devanagari";
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  &-bars {
+    display: none;
+  }
+  .logo {
+    margin: 0;
+    font-size: 30px;
+    width: fit-content;
+    padding: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(57, 57, 57);
+    font-size: 20px;
+  }
+
+  &-desktop {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+
+    li {
+      list-style: none;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      transition: all 0.5s ease;
+
+      a {
+        height: 100%;
+        padding: 25px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &:hover {
+        background-color: rgba(111, 111, 111, 0.205);
+        cursor: pointer;
+      }
+    }
+  }
+  &-mobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav {
+    flex-direction: column;
+    &-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 30px;
+      position: absolute;
+      right: 30px;
+      top: 23px;
+      color: rgb(57, 57, 57);
+      div {
+        background-color: rgb(57, 57, 57);
+        width: 30px;
+        height: 2px;
+        border-radius: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &-mobile {
+      display: block;
+      justify-content: flex-end;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      padding: 0;
+      margin: 0;
+
+      li {
+        list-style: none;
+        color: #fff;
+        font-family: "Aboreto";
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        transition: all 0.5s ease;
+        a {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 40px 0;
+          margin: 0;
+          p {
+            margin: 0;
+            padding: 0;
+          }
+
+          &:hover {
+            background-color: rgba(111, 111, 111, 0.205);
+          }
+        }
+      }
+    }
+
+    &-desktop {
+      display: none;
+    }
+  }
+}

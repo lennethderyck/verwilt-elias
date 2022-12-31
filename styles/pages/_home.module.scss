@@ -1,0 +1,111 @@
+.main {
+  height: 89vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .item-number{
+    position: absolute;
+    font-size: 30px;
+    bottom: 10%;
+  }
+  .box {
+    z-index: 10;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.651);
+    width: 100%;
+    height: 100vh;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    p {
+      position: absolute;
+      right: 20px;
+      font-size: 50px;
+      color: #fff;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .pics-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .content {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    top: 0;
+
+    .slider {
+      width: 100%;
+      height: 100%;
+
+      .swiper-slide {
+        margin: auto 0;
+        height: 85%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+      .wide {
+        background-color: green;
+      }
+    }
+  }
+}
+.box {
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.651);
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  p {
+    position: absolute;
+    right: 20px;
+    font-size: 50px;
+    color: #fff;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .pics-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}

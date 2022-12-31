@@ -6,14 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@next/font": "13.0.7",
+    "@prismicio/client": "^6.7.1",
+    "@prismicio/helpers": "^2.3.6",
+    "@prismicio/next": "^0.1.4",
+    "@prismicio/react": "^2.5.0",
+    "@prismicio/slice-simulator-react": "^0.2.2",
     "eslint": "8.30.0",
     "eslint-config-next": "13.0.7",
+    "framer-motion": "^7.10.2",
     "next": "13.0.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.57.0",
+    "swiper": "^8.4.5"
+  },
+  "devDependencies": {
+    "@prismicio/types": "^0.2.4",
+    "slice-machine-ui": "^0.5.2"
   }
 }
