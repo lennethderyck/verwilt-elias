@@ -59,9 +59,10 @@ export default function Home({settings, navigation, images}) {
       </Head>
       <main className={styles["main"]}>
         <div className={styles["content"]}>
+          {console.log(size)}
         <Swiper
           spaceBetween={100}
-          slidesPerView={size.width < 800 ? 1 : 3}
+          slidesPerView={size.width < 800 ? 3 : 1}
           centeredSlides
           loop
           effect={"coverflow"}
