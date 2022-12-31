@@ -4,10 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  .item-number{
+  .item-number {
     position: absolute;
     font-size: 30px;
     bottom: 10%;
+    font-family: "Noto Sans Devanagari";
   }
   .box {
     z-index: 10;
