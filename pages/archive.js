@@ -25,7 +25,7 @@ const Archive = ({ navigation, settings, work, archive }) => {
       <main>
         <div className={styles["archive"]}>
           {work.data.slices.map((slice) => {
-            return <Card slice={slice} />;
+            return <Card key={slice.id} slice={slice} />;
           })}
         </div>
         <div className={styles["models"]}>
@@ -34,7 +34,7 @@ const Archive = ({ navigation, settings, work, archive }) => {
             {archive.data.slices[0]?.items?.map((model) => {
               console.log(model);
               return (
-              <div className={styles["model"]}>
+              <div key={model.model[0].text} className={styles["model"]}>
                 <div className={styles["model-initials"]}><p>{onlyCapitalLetters(model.model[0].text)}</p> <p>{">"}</p></div>
                 <p><PrismicText field={model.model} /></p>
               </div>);
