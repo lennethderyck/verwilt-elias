@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700;6..96,900&family=Calligraffitti&family=Gruppo&family=Heebo:wght@100;200;300;400;500&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .nav {
-  position: relative;
+  position: fixed;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-family: "Noto Sans Devanagari";
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
   &-bars {
     display: none;
   }
@@ -29,7 +31,19 @@
     align-items: center;
     height: 100%;
     margin: 0;
-
+    .test-nav {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: black;
+        border: 1px solid black;
+        left: 30px;
+        top: 30px;
+      }
+    }
     li {
       list-style: none;
       color: #fff;
@@ -38,6 +52,21 @@
       align-items: center;
       height: 100%;
       transition: all 0.5s ease;
+      position: relative;
+      padding: 0;
+      margin: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid black;
+        left: 30px;
+        top: 30px;
+      }
 
       a {
         height: 100%;
@@ -45,10 +74,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0;
       }
 
       &:hover {
-        background-color: rgba(111, 111, 111, 0.205);
         cursor: pointer;
       }
     }

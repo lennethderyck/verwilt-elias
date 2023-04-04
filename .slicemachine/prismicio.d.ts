@@ -127,6 +127,17 @@ interface PageDocumentData {
      */
     pageTitle: prismicT.RichTextField;
     /**
+     * Description field in *Page*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: page.description
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    description: prismicT.RichTextField;
+    /**
      * Slice Zone field in *Page*
      *
      * - **Field Type**: Slice Zone
@@ -142,7 +153,7 @@ interface PageDocumentData {
  * Slice for *Page → Slice Zone*
  *
  */
-type PageDocumentDataSlicesSlice = TextSlice;
+type PageDocumentDataSlicesSlice = TextSlice | ImageSlice | ModelsSlice;
 /**
  * Page document from Prismic
  *
@@ -167,27 +178,64 @@ interface SettingsDocumentData {
      */
     title: prismicT.RichTextField;
     /**
-     * VerticalImage field in *Settings*
+     * Image field in *Settings*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
-     * - **API ID Path**: settings.verticalImage
+     * - **API ID Path**: settings.image
      * - **Tab**: Main
      * - **Documentation**: https://prismic.io/docs/core-concepts/image
      *
      */
-    verticalImage: prismicT.ImageField<never>;
+    image: prismicT.ImageField<never>;
     /**
-     * HorizontalImage field in *Settings*
+     * Contact field in *Settings*
      *
-     * - **Field Type**: Image
+     * - **Field Type**: Rich Text
      * - **Placeholder**: *None*
-     * - **API ID Path**: settings.horizontalImage
+     * - **API ID Path**: settings.contact
      * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
      *
      */
-    horizontalImage: prismicT.ImageField<never>;
+    contact: prismicT.RichTextField;
+    /**
+     * Social Links field in *Settings*
+     *
+     * - **Field Type**: Group
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.socialLinks[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/group
+     *
+     */
+    socialLinks: prismicT.GroupField<Simplify<SettingsDocumentDataSocialLinksItem>>;
+}
+/**
+ * Item in Settings → Social Links
+ *
+ */
+export interface SettingsDocumentDataSocialLinksItem {
+    /**
+     * Link field in *Settings → Social Links*
+     *
+     * - **Field Type**: Link to Media
+     * - **Placeholder**: *None*
+     * - **API ID Path**: settings.socialLinks[].link
+     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+     *
+     */
+    link: prismicT.LinkToMediaField;
+    /**
+     * Social Name field in *Settings → Social Links*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Example: Instagram
+     * - **API ID Path**: settings.socialLinks[].socialName
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    socialName: prismicT.RichTextField;
 }
 /**
  * Settings document from Prismic
@@ -200,6 +248,94 @@ interface SettingsDocumentData {
  */
 export type SettingsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<SettingsDocumentData>, "settings", Lang>;
 export type AllDocumentTypes = ImageDocument | NavigationDocument | PageDocument | SettingsDocument;
+/**
+ * Primary content in Image → Primary
+ *
+ */
+interface ImageSliceDefaultPrimary {
+    /**
+     * Model field in *Image → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: This is where it all begins...
+     * - **API ID Path**: image.primary.title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Image field in *Image → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: image.primary.image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Image Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Image`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<ImageSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Image*
+ *
+ */
+type ImageSliceVariation = ImageSliceDefault;
+/**
+ * Image Shared Slice
+ *
+ * - **API ID**: `image`
+ * - **Description**: `Image`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ImageSlice = prismicT.SharedSlice<"image", ImageSliceVariation>;
+/**
+ * Item in Models → Items
+ *
+ */
+export interface ModelsSliceDefaultItem {
+    /**
+     * Model field in *Models → Items*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: models.items[].model
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    model: prismicT.RichTextField;
+}
+/**
+ * Default variation for Models Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Models`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ModelsSliceDefault = prismicT.SharedSliceVariation<"default", Record<string, never>, Simplify<ModelsSliceDefaultItem>>;
+/**
+ * Slice variation for *Models*
+ *
+ */
+type ModelsSliceVariation = ModelsSliceDefault;
+/**
+ * Models Shared Slice
+ *
+ * - **API ID**: `models`
+ * - **Description**: `Models`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type ModelsSlice = prismicT.SharedSlice<"models", ModelsSliceVariation>;
 /**
  * Primary content in Text → Primary
  *
@@ -254,6 +390,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { ImageDocumentData, ImageDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocument, AllDocumentTypes, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
+        export type { ImageDocumentData, ImageDocument, NavigationDocumentData, NavigationDocumentDataLinksItem, NavigationDocument, PageDocumentData, PageDocumentDataSlicesSlice, PageDocument, SettingsDocumentData, SettingsDocumentDataSocialLinksItem, SettingsDocument, AllDocumentTypes, ImageSliceDefaultPrimary, ImageSliceDefault, ImageSliceVariation, ImageSlice, ModelsSliceDefaultItem, ModelsSliceDefault, ModelsSliceVariation, ModelsSlice, TextSliceDefaultPrimary, TextSliceDefault, TextSliceVariation, TextSlice };
     }
 }

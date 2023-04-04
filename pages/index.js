@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicLink, PrismicText } from "@prismicio/react";
+import { PrismicLink, PrismicText, PrismicRichText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers";
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useState, useRef } from "react";
@@ -8,26 +8,30 @@ import { createClient } from "../prismicio";
 import styles from "../styles/pages/_home.module.scss";
 import { Layout } from "../components/Layout";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { EffectCoverflow, Pagination, Navigation } from "swiper";
+import SwiperCore, { EffectCoverflow, Pagination, Navigation, Scrollbar, A11y } from "swiper";
 
 import 'swiper/css';
 
-export default function Home({settings, navigation, images}) {
+export default function Home({settings, navigation, work}) {
   const [imageClicked, setImageClicked] = React.useState(false);
   const [huidigeIndex, setHuidigeIndex] = React.useState(0);
   const [imageSrc, setImageSrc] = React.useState("false");
   const activate = (src) => {
-    console.log("Test");
     setImageClicked(true);
     setImageSrc(src);
+    const url = src.url;
   };
   const deActivate = () => {
-    console.log("Test");
     setImageClicked(false);
     setImageSrc("");
   };
+
+  function sliceUrl(url){
+    return url.slice(url.indexOf("_")+1, url.indexOf("?"));
+  }
+
   useEffect(() => {
-    SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
+    SwiperCore.use([EffectCoverflow, Pagination, Navigation, Scrollbar, A11y]);
   }, []);
   const size = useWindowSize();
   return (
@@ -60,7 +64,6 @@ export default function Home({settings, navigation, images}) {
       <main className={styles["main"]}>
         <div className={styles["content"]}>
         <Swiper
-          spaceBetween={50}
           slidesPerView={size.width < 800 ? 1 : 3}
           centeredSlides
           loop
@@ -68,24 +71,26 @@ export default function Home({settings, navigation, images}) {
           coverflowEffect={{
             rotate: 0,
             stretch: 100,
-            depth: 70,
+            depth: 100,
             modifier: 1,
             slideShadows: false,
           }}
-          onSlideChange={(index) => setHuidigeIndex(index.realIndex)}
+          onSlideChange={(index) => {setHuidigeIndex(index.realIndex);}}
           className={styles["slider"]}
         >
           <div className={styles["swiper-wrapper"]}>
-          {images.map((item, index) => {
+          {work.data.slices.map((item, index) => {
               return (
                 <SwiperSlide
-                key={index}
+                  key={index}
                   className={styles["swiper-slide"]}
-                  onClick={() => activate(item.data.img)}
+                  onClick={(params) => {activate(item.primary.image); console.log(item)}}
                 >
                   <PrismicNextImage
-                    field={item?.data.img}
+                    field={item?.primary.image}
                     layout="fill"
+                    className={styles["image"]}
+                    alt=''
                   />
                 </SwiperSlide>
               );
@@ -93,8 +98,10 @@ export default function Home({settings, navigation, images}) {
             </div>
         </Swiper>
         </div>
-        <div className={styles["item-number"]}>
-          {huidigeIndex + 1} / {images.length}
+        <div className={styles["details"]}>
+          <div className={styles["first"]}>Model <p>{">"}</p></div>
+          <div className={styles["second"]}><PrismicText field={work.data.slices[huidigeIndex].primary?.title} /></div>
+          <div className={styles["third"]}>({sliceUrl(work.data.slices[huidigeIndex].primary?.image.url)})</div>
         </div>
       </main>
     </Layout>
@@ -106,13 +113,13 @@ export async function getStaticProps({ previewData }) {
 
   const navigation = await client.getSingle("navigation");
   const settings = await client.getSingle("settings");
-  const images = await client.getAllByType("image");
+  const work = await client.getByUID("page", "work");
 
   return {
     props: {
       navigation,
       settings,
-      images,
+      work,
     },
   };
 }

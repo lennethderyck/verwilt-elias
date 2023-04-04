@@ -1,0 +1,37 @@
+.archive {
+  padding: 50px;
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.models {
+  padding: 0 25px;
+  display: flex;
+  gap: 100px;
+
+  .model {
+    display: flex;
+    width: 300px;
+    p {
+      padding-left: 15px;
+    }
+
+    .model-initials {
+      display: flex;
+      width: 100px;
+      justify-content: space-between;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .models {
+    flex-direction: column;
+    gap: 25px;
+    display: block;
+
+    .model {
+      width: 100%;
+    }
+  }
+}

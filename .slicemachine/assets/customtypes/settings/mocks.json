@@ -14,27 +14,43 @@
     "title": [
       {
         "type": "paragraph",
-        "text": "Magna veniam occaecat nulla deserunt irure quis Lorem excepteur excepteur incididunt consectetur dolor id. Id ex aliquip do velit exercitation do occaecat sit sunt nostrud ad quis commodo irure. Ut consequat amet consequat amet.",
+        "text": "Cillum Lorem elit in aliquip proident anim dolore ea. Laborum do dolore do elit. Eiusmod sit nulla quis nisi incididunt sit eiusmod ut eu sunt labore.",
         "spans": []
       }
     ],
-    "verticalImage": {
+    "image": {
       "dimensions": {
         "width": 900,
         "height": 500
       },
       "alt": null,
       "copyright": null,
-      "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1"
+      "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a"
     },
-    "horizontalImage": {
-      "dimensions": {
-        "width": 900,
-        "height": 500
-      },
-      "alt": null,
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c"
-    }
+    "contact": [
+      {
+        "type": "paragraph",
+        "text": "Fugiat aliquip pariatur exercitation quis sit esse qui anim aute minim voluptate ullamco anim mollit occaecat.",
+        "spans": []
+      }
+    ],
+    "socialLinks": [
+      {
+        "link": {
+          "link_type": "Media",
+          "name": "mock",
+          "kind": "image",
+          "url": "https://source.unsplash.com/random",
+          "size": "10kB"
+        },
+        "socialName": [
+          {
+            "type": "paragraph",
+            "text": "Voluptate proident exercitation est aliquip magna Lorem magna. Amet ut occaecat anim cupidatat cillum deserunt dolor ipsum officia cupidatat.",
+            "spans": []
+          }
+        ]
+      }
+    ]
   }
 }

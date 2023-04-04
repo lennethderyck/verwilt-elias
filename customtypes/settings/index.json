@@ -14,20 +14,46 @@
           "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
-      "verticalImage": {
+      "image": {
         "type": "Image",
         "config": {
-          "label": "VerticalImage",
+          "label": "Image",
           "constraint": {},
           "thumbnails": []
         }
       },
-      "horizontalImage": {
-        "type": "Image",
+      "contact": {
+        "type": "StructuredText",
         "config": {
-          "label": "HorizontalImage",
-          "constraint": {},
-          "thumbnails": []
+          "label": "Contact",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "socialLinks": {
+        "type": "Group",
+        "config": {
+          "label": "Social Links",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": "media"
+              }
+            },
+            "socialName": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Social Name",
+                "placeholder": "Example: Instagram",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            }
+          }
         }
       }
     }

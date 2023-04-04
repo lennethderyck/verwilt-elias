@@ -1,0 +1,51 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  p {
+    padding: 5px 0;
+  }
+
+  img {
+    cursor: pointer;
+    object-fit: cover;
+  }
+}
+.box {
+  z-index: 10;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.651);
+  width: 100%;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  p {
+    position: absolute;
+    right: 20px;
+    font-size: 50px;
+    color: #fff;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .pics-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}

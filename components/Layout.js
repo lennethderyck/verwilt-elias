@@ -17,7 +17,7 @@ export const Layout = ({
         navigation={navigation}
         settings={settings}
       />:""}
-      <main>{children}</main>
+      <main style={{paddingTop: "80px"}}>{children}</main>
       {!footerNotActive ? <Footer settings={settings}/> : ""}
     </div>
   );

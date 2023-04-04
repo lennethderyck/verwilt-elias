@@ -2,10 +2,36 @@
   "_cts": {
     "image": {},
     "navigation": {},
-    "settings": {},
+    "settings": {
+      "socialLinks": {
+        "socialName": {
+          "config": {
+            "patternType": "PARAGRAPH",
+            "blocks": 1
+          }
+        }
+      }
+    },
     "page": {}
   },
   "slices": {
-    "Text": {}
+    "Text": {},
+    "Image": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Models": {
+      "default": {
+        "primary": {}
+      }
+    }
   }
 }
