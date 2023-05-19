@@ -25,7 +25,6 @@ const About = ({navigation, settings, about}) =>{
         <div className={styles["about-image"]}>
           <PrismicNextImage
                     field={settings?.data.image}
-                    layout="fill"
                     alt=''
                   />
         </div>

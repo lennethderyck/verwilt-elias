@@ -33,7 +33,10 @@ export default function Home({settings, navigation, work}) {
 
   useEffect(() => {
     SwiperCore.use([EffectCoverflow, Pagination, Navigation, Scrollbar, A11y]);
-  }, []);
+    setTimeout(() => {
+      setInitialLoad(true)
+    }, 3000);
+  }, [initialLoad]);
   const size = useWindowSize();
   return (
     <Layout
@@ -47,6 +50,7 @@ export default function Home({settings, navigation, work}) {
                 <PrismicNextImage
                     field={imageSrc}
                     layout="fill"
+                    alt=''
                   />
               </div>
               <p onClick={() => deActivate()}>X</p>
@@ -83,7 +87,7 @@ export default function Home({settings, navigation, work}) {
           className={styles["slider"]}
         >
           <div className={styles["swiper-wrapper"]}>
-          {work.data.slices.map((item, index) => {
+          {initialLoad && work.data.slices.map((item, index) => {
               return (
                 <SwiperSlide
                   key={index}
@@ -92,7 +96,6 @@ export default function Home({settings, navigation, work}) {
                 >
                   <PrismicNextImage
                     field={item?.primary.image}
-                    layout="fill"
                     className={styles["image"]}
                     alt=''
                   />

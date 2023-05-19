@@ -7,7 +7,6 @@ import {useState, useCallback, useEffect} from "react";
 export const Card = ( {slice} ) => {
     const[imageClicked, setImageClicked] = useState(false);
     const activate = () => {
-      console.log("Test")
       setImageClicked(true)
     }
     function sliceUrl(url){
@@ -22,6 +21,7 @@ export const Card = ( {slice} ) => {
               <PrismicNextImage
                 field={slice.primary.image}
                 layout="fill"
+                alt=""
               />
               </div>
               <p onClick={() => setImageClicked(!imageClicked)}>X</p>
