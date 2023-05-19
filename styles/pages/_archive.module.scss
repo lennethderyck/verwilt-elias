@@ -1,35 +1,47 @@
-.archive {
-  padding: 50px;
-  display: grid;
-  gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.models {
-  padding: 0 25px;
+.wrapper {
   display: flex;
-  gap: 100px;
-
-  .model {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 84vh;
+  margin-top: 25px;
+  .archive {
+    padding: 0 25px;
     display: flex;
-    width: 300px;
-    p {
-      padding-left: 15px;
-    }
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  .models {
+    position: relative;
+    bottom: 0;
+    padding: 0 25px;
+    display: flex;
+    gap: 100px;
+    font-family: "neue-haas-grotesk-display", sans-serif;
+    font-weight: 500;
+    font-style: normal;
 
-    .model-initials {
+    .model {
       display: flex;
-      width: 100px;
-      justify-content: space-between;
+      width: 300px;
+      p {
+        padding-left: 15px;
+      }
+
+      .model-initials {
+        display: flex;
+        width: 100px;
+        justify-content: space-between;
+      }
     }
   }
 }
+
 @media only screen and (max-width: 800px) {
   .models {
+    gap: 10px !important;
     flex-direction: column;
-    gap: 25px;
-    display: block;
-
+    padding-bottom: 30px !important;
     .model {
       width: 100%;
     }

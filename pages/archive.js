@@ -22,7 +22,7 @@ const Archive = ({ navigation, settings, work, archive }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <div className={styles["wrapper"]}>
         <div className={styles["archive"]}>
           {work.data.slices.map((slice) => {
             return <Card key={slice.id} slice={slice} />;
@@ -32,7 +32,6 @@ const Archive = ({ navigation, settings, work, archive }) => {
           <p>Models</p>
           <div className={styles["models-list"]}>
             {archive.data.slices[0]?.items?.map((model) => {
-              console.log(model);
               return (
               <div key={model.model[0].text} className={styles["model"]}>
                 <div className={styles["model-initials"]}><p>{onlyCapitalLetters(model.model[0].text)}</p> <p>{">"}</p></div>
@@ -41,7 +40,7 @@ const Archive = ({ navigation, settings, work, archive }) => {
             })}
           </div>
         </div>
-      </main>
+        </div>
     </Layout>
   );
 };

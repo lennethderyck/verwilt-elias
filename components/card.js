@@ -31,7 +31,7 @@ export const Card = ( {slice} ) => {
         ) : (
           ''
         )}
-          <p>({sliceUrl(slice.primary.image.url)})</p>
+          <p>{sliceUrl(slice.primary.image.url)}</p>
           <PrismicNextImage
                 field={slice.primary.image}
                 layout="fill"

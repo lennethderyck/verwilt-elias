@@ -13,7 +13,11 @@ const NavItem = ({ children, isActive }) => {
   //             router.asPath ===
   //             ("/" + item.link.uid === "/home" ? "/" : "/" + item.link.uid);
   return (
-    <li className={isActive ? styles["test-nav"] : ""}>{children}</li>
+    <div className={styles["menu-item"]}>
+      <div className={styles["circle"]} style={{backgroundColor: isActive ? "black": "white"}} ></div>
+      <li>{children}</li>
+    </div>
+    
   );
 };
 
@@ -23,7 +27,7 @@ export const Header = ({
   settings,
 }) => {
   const router = useRouter();
-  const [showNav, setNav] = useState(true);
+  const [showNav, setNav] = useState(false);
   const handleToggleNav = () => {
     setNav(!showNav);
   };
@@ -34,24 +38,6 @@ export const Header = ({
                 <p className={styles["logo"]}><PrismicText field={navigation.data.homepageLabel} /></p>
               </PrismicLink>
             </NavItem>
-          {showNav?"":<ul className={styles["nav-mobile"]}>
-            <NavItem>
-              <PrismicLink href="/">
-                <p>Work</p>
-              </PrismicLink>
-            </NavItem>
-            {navigation.data?.links.map((item) => {
-              const isActive =
-              router.asPath ===
-              ("/" + item.link.uid === "/work" ? "/" : "/" + item.link.uid);
-              return (
-              <NavItem key={prismicH.asText(item.label)}>
-                <PrismicLink field={item.link} >
-                <p><PrismicText field={item.label} /></p>
-                </PrismicLink>
-              </NavItem>
-            )})}
-          </ul>}
           <ul className={styles["nav-desktop"]}>
             <NavItem isActive={router.asPath === "/"}>
               <PrismicLink href="/">
@@ -65,18 +51,37 @@ export const Header = ({
               return (
               <NavItem key={prismicH.asText(item.label)} isActive={isActive}>
                 <PrismicLink field={item.link}>
-                  <PrismicText field={item.label} />
+                  <p><PrismicText field={item.label} /></p>
                 </PrismicLink>
               </NavItem>
             )})}
-          </ul>
-          {/* <FontAwesomeIcon icon={faBars} onClick={handleToggleNav} className={styles["nav-bars"]}/> */}
-          <div onClick={handleToggleNav}
+            <div onClick={handleToggleNav}
               className={styles["nav-bars"]}>
                 <div></div>
                 <div></div>
                 <div></div>
               </div>
+          </ul>
+          {showNav && <ul className={styles["nav-mobile"]}>
+            <NavItem isActive={router.asPath === "/"}>
+              <PrismicLink href="/">
+                <p>Work</p>
+              </PrismicLink>
+            </NavItem>
+            {navigation.data?.links.map((item) => {
+              const isActive =
+              router.asPath ===
+              ("/" + item.link.uid === "/work" ? "/" : "/" + item.link.uid);
+              return (
+              <NavItem key={prismicH.asText(item.label)} isActive={isActive}>
+                <PrismicLink field={item.link}>
+                  <p><PrismicText field={item.label} /></p>
+                </PrismicLink>
+              </NavItem>
+            )})}
+          </ul>}
+          {/* <FontAwesomeIcon icon={faBars} onClick={handleToggleNav} className={styles["nav-bars"]}/> */}
+          
         </nav>
   );
 };

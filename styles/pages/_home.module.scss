@@ -35,7 +35,6 @@
     position: absolute;
     font-size: 30px;
     bottom: 7%;
-    font-family: "Noto Sans Devanagari";
   }
   .box {
     z-index: 10;
@@ -106,7 +105,7 @@
   z-index: 10;
   position: fixed;
   background-color: rgba(0, 0, 0, 0.651);
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   top: 0px;
   left: 0px;
@@ -136,6 +135,43 @@
       height: 100%;
       width: 100%;
       object-fit: contain;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .main {
+    .content {
+      transform: scale(1.5);
+    }
+    .details {
+      position: absolute;
+      bottom: 25px;
+      left: 0;
+      display: flex;
+      padding: 10px;
+      width: 100%;
+      padding-left: 20px;
+
+      div {
+        height: 100%;
+        width: 100%;
+      }
+
+      .first {
+        display: flex;
+        justify-content: flex-start;
+        gap: 35px;
+        p {
+          font-weight: bold;
+        }
+        width: 100px;
+      }
+      .second {
+        padding: 0 10px;
+      }
+      .third {
+        display: none;
+      }
     }
   }
 }

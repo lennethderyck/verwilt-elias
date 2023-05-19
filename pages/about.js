@@ -33,12 +33,12 @@ const About = ({navigation, settings, about}) =>{
           <p><PrismicText field={about.data.description} /></p>
           <div className={styles["about-details-contact"]}>
             <p>Contact</p>
-            <p><PrismicText field={settings.data.contact} /></p>
+            <p className={styles["email"]}><PrismicText field={settings.data.contact} /></p>
           </div>
           <div className={styles["about-details-socials"]}>
             <p>Socials</p>
-            <p>Instagram</p>
-            <p>Tiktok</p>
+            <a href="https://www.instagram.com/eliasverwilt/" target='_blank'>Instagram</a>
+            <a href="https://www.tiktok.com/@eliasverwilt" target='_blank'>Tiktok</a>
           </div>
         </div>
       </main>

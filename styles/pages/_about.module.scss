@@ -26,10 +26,18 @@
     &-contact {
       display: flex;
       gap: 100px;
+      .email {
+        border-bottom: 1px solid black;
+      }
     }
     &-socials {
       display: flex;
       gap: 100px;
+
+      a {
+        color: black;
+        border-bottom: 1px solid black;
+      }
     }
   }
 }

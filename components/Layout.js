@@ -1,5 +1,6 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import styles from '../styles/components/_layout.module.scss'
 
 //Gives structure to the website by setting a header and footer.
 //When layout is used the header will always be at the top of the page and the footer at the bottom
@@ -17,7 +18,7 @@ export const Layout = ({
         navigation={navigation}
         settings={settings}
       />:""}
-      <main style={{paddingTop: "80px"}}>{children}</main>
+      <main className={styles["layout-main"]}>{children}</main>
       {!footerNotActive ? <Footer settings={settings}/> : ""}
     </div>
   );

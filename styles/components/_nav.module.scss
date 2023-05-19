@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700;6..96,900&family=Calligraffitti&family=Gruppo&family=Heebo:wght@100;200;300;400;500&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://use.typekit.net/nqx8hpm.css");
+.nav > div {
+  width: 300px;
+}
 .nav {
   position: fixed;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "Noto Sans Devanagari";
+  font-family: "neue-haas-grotesk-display", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   width: 100%;
   background-color: #fff;
   z-index: 10;
@@ -24,84 +30,84 @@
     color: rgb(57, 57, 57);
     font-size: 20px;
   }
+  &-mobile {
+    display: none;
+  }
 
   &-desktop {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     height: 100%;
+    width: 100%;
     margin: 0;
-    .test-nav {
-      &::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: black;
-        border: 1px solid black;
-        left: 30px;
-        top: 30px;
-      }
-    }
-    li {
-      list-style: none;
-      color: #fff;
+    padding: 0;
+
+    .menu-item {
       display: flex;
-      justify-content: center;
       align-items: center;
-      height: 100%;
-      transition: all 0.5s ease;
+      padding: 25px 20px;
+      gap: 10px;
       position: relative;
-      padding: 0;
-      margin: 0;
-
-      &::before {
-        content: "";
+      .circle {
         position: absolute;
         width: 10px;
         height: 10px;
+        background-color: black;
         border-radius: 50%;
-        background-color: transparent;
         border: 1px solid black;
-        left: 30px;
-        top: 30px;
+        margin-top: 2px;
       }
-
-      a {
-        height: 100%;
-        padding: 25px 50px;
+      li {
+        list-style: none;
+        color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 100%;
+        transition: all 0.5s ease;
+        position: relative;
+        padding: 0;
         margin: 0;
-      }
 
-      &:hover {
-        cursor: pointer;
+        a {
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0;
+          padding: 10px 25px;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
-  }
-  &-mobile {
-    display: none;
   }
 }
 
 @media only screen and (max-width: 800px) {
+  .nav > div {
+    width: 200px;
+    z-index: 10;
+  }
   .nav {
-    flex-direction: column;
+    .logo {
+      font-size: 15px;
+    }
+    width: 100vw;
     &-bars {
       display: flex;
       flex-direction: column;
       gap: 6px;
       font-size: 30px;
-      position: absolute;
       right: 30px;
       top: 23px;
       color: rgb(57, 57, 57);
       div {
         background-color: rgb(57, 57, 57);
-        width: 30px;
+        width: 25px;
         height: 2px;
         border-radius: 5px;
       }
@@ -111,45 +117,66 @@
       }
     }
 
-    &-mobile {
-      display: block;
-      justify-content: flex-end;
-      align-items: center;
+    &-desktop {
+      z-index: 10;
+      padding-right: 25px;
+      gap: 5px;
       width: 100%;
-      position: relative;
-      padding: 0;
-      margin: 0;
-
-      li {
-        list-style: none;
-        color: #fff;
-        font-family: "Noto Sans Devanagari";
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        transition: all 0.5s ease;
-        a {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          padding: 40px 0;
-          margin: 0;
-          p {
-            margin: 0;
-            padding: 0;
-          }
-
-          &:hover {
-            background-color: rgba(111, 111, 111, 0.205);
-          }
+      .menu-item {
+        padding: 0 5px;
+        li {
+          display: none;
         }
       }
     }
+    &-mobile {
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      background-color: white;
+      z-index: 5;
+      justify-content: center;
 
-    &-desktop {
-      display: none;
+      .menu-item {
+        display: flex;
+        align-items: center;
+        padding: 0px 10px;
+        gap: 10px;
+        .circle {
+          width: 10px;
+          height: 10px;
+          background-color: black;
+          border-radius: 50%;
+          border: 1px solid black;
+        }
+        li {
+          list-style: none;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          transition: all 0.5s ease;
+          position: relative;
+          padding: 0;
+          margin: 0;
+
+          a {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
