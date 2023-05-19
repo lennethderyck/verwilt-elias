@@ -37,8 +37,8 @@ const About = ({navigation, settings, about}) =>{
           </div>
           <div className={styles["about-details-socials"]}>
             <p>Socials</p>
-            <a href="https://www.instagram.com/eliasverwilt/" target='_blank'>Instagram</a>
-            <a href="https://www.tiktok.com/@eliasverwilt" target='_blank'>Tiktok</a>
+            <a href="https://www.instagram.com/eliasverwilt/" target='_blank' rel="noreferrer">Instagram</a>
+            <a href="https://www.tiktok.com/@eliasverwilt" target='_blank' rel="noreferrer">Tiktok</a>
           </div>
         </div>
       </main>
