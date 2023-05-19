@@ -80,7 +80,7 @@ export default function Home({settings, navigation, work}) {
           coverflowEffect={{
             rotate: 0,
             stretch: 100,
-            depth: 100,
+            depth: 200,
             modifier: 1,
             slideShadows: false,
           }}
