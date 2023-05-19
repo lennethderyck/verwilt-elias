@@ -33,8 +33,8 @@ export default function Home({settings, navigation, work}) {
 
   useEffect(() => {
     SwiperCore.use([EffectCoverflow, Pagination, Navigation, Scrollbar, A11y]);
-    setInitialLoad(true)
-  }, [setInitialLoad]);
+    work.data.slices ? setInitialLoad(true) : ""
+  }, [work, setInitialLoad]);
   const size = useWindowSize();
   return (
     <Layout
