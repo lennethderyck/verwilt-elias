@@ -16,6 +16,7 @@ export default function Home({settings, navigation, work}) {
   const [imageClicked, setImageClicked] = React.useState(false);
   const [huidigeIndex, setHuidigeIndex] = React.useState(0);
   const [imageSrc, setImageSrc] = React.useState("false");
+  const [initialLoad, setInitialLoad] = useState(false)
   const activate = (src) => {
     setImageClicked(true);
     setImageSrc(src);
@@ -32,7 +33,8 @@ export default function Home({settings, navigation, work}) {
 
   useEffect(() => {
     SwiperCore.use([EffectCoverflow, Pagination, Navigation, Scrollbar, A11y]);
-  }, []);
+    setInitialLoad(true)
+  }, [setInitialLoad]);
   const size = useWindowSize();
   return (
     <Layout
@@ -80,7 +82,7 @@ export default function Home({settings, navigation, work}) {
           className={styles["slider"]}
         >
           <div className={styles["swiper-wrapper"]}>
-          {work.data.slices.map((item, index) => {
+          {initialLoad && work.data.slices.map((item, index) => {
               return (
                 <SwiperSlide
                   key={index}
