@@ -140,12 +140,15 @@
 }
 @media only screen and (max-width: 800px) {
   .main {
+    height: 80vh;
+    overflow: hidden;
     .content {
       transform: scale(1.5);
+      height: 80%;
     }
     .details {
       position: absolute;
-      bottom: 25px;
+      bottom: 80px;
       left: 0;
       display: flex;
       padding: 10px;

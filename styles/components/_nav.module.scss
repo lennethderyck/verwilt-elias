@@ -51,8 +51,8 @@
       position: relative;
       .circle {
         position: absolute;
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
         background-color: black;
         border-radius: 50%;
         border: 1px solid black;
@@ -94,7 +94,7 @@
   }
   .nav {
     .logo {
-      font-size: 15px;
+      font-size: 20px;
     }
     width: 100vw;
     &-bars {
@@ -105,6 +105,7 @@
       right: 30px;
       top: 23px;
       color: rgb(57, 57, 57);
+      margin-left: 25px;
       div {
         background-color: rgb(57, 57, 57);
         width: 25px;
@@ -120,7 +121,7 @@
     &-desktop {
       z-index: 10;
       padding-right: 25px;
-      gap: 5px;
+      gap: 10px;
       width: 100%;
       .menu-item {
         padding: 0 5px;
