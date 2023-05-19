@@ -70,6 +70,7 @@ export default function Home({settings, navigation, work}) {
           slidesPerView={size.width < 800 ? 2 : 3}
           centeredSlides
           loop
+          lazy={true}
           effect={"coverflow"}
           coverflowEffect={{
             rotate: 0,
