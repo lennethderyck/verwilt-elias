@@ -33,7 +33,6 @@ export default function Home({settings, navigation, work}) {
 
   useEffect(() => {
     SwiperCore.use([EffectCoverflow, Pagination, Navigation, Scrollbar, A11y]);
-    setTimeout(setInitialLoad(true),3000)
   }, []);
   const size = useWindowSize();
   return (
@@ -67,6 +66,8 @@ export default function Home({settings, navigation, work}) {
       <main className={styles["main"]}>
         <div className={styles["content"]}>
         <Swiper
+        observeParents
+        observer
           slidesPerView={size.width < 800 ? 2 : 3}
           centeredSlides
           loop
