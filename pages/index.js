@@ -83,7 +83,7 @@ export default function Home({settings, navigation, work}) {
           className={styles["slider"]}
         >
           <div className={styles["swiper-wrapper"]}>
-          {initialLoad && work.data.slices.map((item, index) => {
+          {work.data.slices.map((item, index) => {
               return (
                 <SwiperSlide
                   key={index}
