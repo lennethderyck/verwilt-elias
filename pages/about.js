@@ -29,7 +29,7 @@ const About = ({navigation, settings, about}) =>{
                   />
         </div>
         <div className={styles["about-details"]}>
-          <p><PrismicText field={about.data.description} /></p>
+          <p className={styles["about-details-description"]}><PrismicText field={about.data.description} /></p>
           <div className={styles["about-details-contact"]}>
             <p>Contact</p>
             <p className={styles["email"]}><PrismicText field={settings.data.contact} /></p>
@@ -38,6 +38,17 @@ const About = ({navigation, settings, about}) =>{
             <p>Socials</p>
             <a href="https://www.instagram.com/eliasverwilt/" target='_blank' rel="noreferrer">Instagram</a>
             <a href="https://www.tiktok.com/@eliasverwilt" target='_blank' rel="noreferrer">Tiktok</a>
+          </div>
+          <div className={styles["contact-form"]}>
+            <form>
+              <h2>Contact me</h2>
+
+              <div className={styles["contact-form-input"]}>
+                  <input type='text' name='name' placeholder='Full Name'/>
+                  <input type='text' name='name' placeholder='E-mail'/>
+              </div>
+              <textarea type='text' name='name' placeholder='Message...'/>
+            </form>
           </div>
         </div>
       </main>
