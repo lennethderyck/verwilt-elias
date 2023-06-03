@@ -9,7 +9,6 @@ import { Layout } from "../components/Layout";
 import styles from "../styles/pages/_about.module.scss";
 
 const About = ({navigation, settings, about}) =>{
-  console.log(about)
     return(
         <Layout
       navigation={navigation}
