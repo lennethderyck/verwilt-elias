@@ -13,13 +13,13 @@ export const Layout = ({
   children,
 }) => {
   return (
-    <div className="text-slate-700">
+    <div className={styles["layout-container"]}>
       {!headerNotActive?<Header
         navigation={navigation}
         settings={settings}
       />:""}
       <main className={styles["layout-main"]}>{children}</main>
-      {!footerNotActive ? <Footer settings={settings}/> : ""}
+      {/* {!footerNotActive ? <Footer settings={settings}/> : ""} */}
     </div>
   );
 };

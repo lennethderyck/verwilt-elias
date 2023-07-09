@@ -111,6 +111,9 @@ export default function Home({settings, navigation, work}) {
           <div className={styles["second"]}><PrismicText field={work.data.slices[huidigeIndex].primary?.title} /></div>
           <div className={styles["third"]}>({sliceUrl(work.data.slices[huidigeIndex].primary?.image.url)})</div>
         </div>
+        <div className={styles["footer"]}>
+          <p>© 2023. All rights reserved</p>
+        </div>
       </main>
     </Layout>
   )

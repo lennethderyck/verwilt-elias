@@ -21,6 +21,14 @@ const About = ({navigation, settings, about}) =>{
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles["about-container"]}>
+        <div className={styles["about-details-socials-mobile"]}>
+            <p>Socials</p>
+            <div className={styles["about-details-socials-box"]}>
+            <a href="https://www.instagram.com/eliasverwilt/" target='_blank' rel="noreferrer">Instagram</a>
+            <a href="https://www.tiktok.com/@eliasverwilt" target='_blank' rel="noreferrer">Tiktok</a>
+            </div>
+            
+          </div>
         <div className={styles["about-image"]}>
           <PrismicNextImage
                     field={settings?.data.image}
@@ -29,26 +37,31 @@ const About = ({navigation, settings, about}) =>{
         </div>
         <div className={styles["about-details"]}>
           <p className={styles["about-details-description"]}><PrismicText field={about.data.description} /></p>
-          <div className={styles["about-details-contact"]}>
-            <p>Contact</p>
-            <p className={styles["email"]}><PrismicText field={settings.data.contact} /></p>
-          </div>
           <div className={styles["about-details-socials"]}>
             <p>Socials</p>
+            <div className={styles["about-details-socials-box"]}>
             <a href="https://www.instagram.com/eliasverwilt/" target='_blank' rel="noreferrer">Instagram</a>
             <a href="https://www.tiktok.com/@eliasverwilt" target='_blank' rel="noreferrer">Tiktok</a>
+            </div>
+            
           </div>
           <div className={styles["contact-form"]}>
             <form>
-              <h2>Contact me</h2>
-
-              <div className={styles["contact-form-input"]}>
+              <p>Contact</p>
+              <div className={styles["contact-form-box"]}>
+              <div className={styles["contact-form-box-input"]}>
                   <input type='text' name='name' placeholder='Full Name'/>
                   <input type='text' name='name' placeholder='E-mail'/>
               </div>
               <textarea type='text' name='name' placeholder='Message...'/>
+              </div>
+
+              
             </form>
           </div>
+        </div>
+        <div className={styles["footer"]}>
+          <p>© 2023. All rights reserved</p>
         </div>
       </main>
     </Layout>

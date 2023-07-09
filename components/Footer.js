@@ -9,7 +9,7 @@ export const Footer = ({settings }) => {
   //Returns e footer component that is used for the whole website and is placed at the bottom
   return (
         <div className={styles["footer"]}>
-          <p><PrismicText field={settings.data.title} /> - {date} ©</p>
+          <p>© 2023. All rights reserved</p>
         </div>
   );
 };

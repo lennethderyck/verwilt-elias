@@ -2,14 +2,24 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  min-height: 84vh;
-  margin-top: 25px;
+  font-size: 1.2rem;
+  padding-top: 60px;
+  height: 100%;
+  position: relative;
+  .about-details-socials-mobile {
+    display: none;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 
   .about-image {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     flex: 1;
+    margin-right: 15px;
+    height: 100%;
+    position: relative;
 
     img {
       width: 100%;
@@ -18,53 +28,53 @@
   }
 
   .about-details {
-    padding: 25px;
     flex: 2;
     display: flex;
     flex-direction: column;
     gap: 20px;
 
     .contact-form {
+      &-box {
+        margin: 0;
+        padding: 0;
+        &-input {
+          display: flex;
+          justify-content: space-between;
+          gap: 15px;
+          margin-bottom: 15px;
+
+          input {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-size: 1.2rem;
+          }
+        }
+      }
       form {
         display: flex;
-        flex-direction: column;
-        width: 50%;
-        gap: 10px;
+        width: 80%;
+        p {
+          width: 150px;
+        }
 
         textarea {
-          margin: 0 10px;
-          padding: 10px 30px;
-          font-size: 15px;
+          font-size: 1.2rem;
           resize: vertical;
-        }
-      }
-
-      &-input {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 10px;
-        gap: 10px;
-
-        input {
           width: 100%;
-          display: flex;
-          flex-direction: column;
-          padding: 10px 30px;
-          font-size: 15px;
+          height: 250px;
         }
-      }
-    }
-
-    &-contact {
-      display: flex;
-      gap: 100px;
-      .email {
-        border-bottom: 1px solid black;
       }
     }
     &-socials {
+      &-box {
+        display: flex;
+        gap: 50px;
+      }
       display: flex;
-      gap: 100px;
+      p {
+        width: 150px;
+      }
 
       a {
         color: black;
@@ -80,19 +90,36 @@
     justify-content: space-between;
     min-height: 84vh;
     margin-top: 25px;
+    .about-details-socials-mobile {
+      display: block;
+      margin-bottom: 15px;
+      &-box {
+        display: flex;
+        gap: 50px;
+      }
+      display: flex;
+      p {
+        width: 150px;
+      }
 
+      a {
+        color: black;
+        border-bottom: 1px solid black;
+      }
+    }
+    .footer {
+      display: none;
+    }
     .about-image {
-      width: 60%;
-      margin: 0 auto;
+      width: 80%;
     }
 
     .about-details {
-      padding: 25px;
-
       &-description {
         order: 3;
-        width: 95%;
-        font-size: 15px;
+        width: 100%;
+        font-size: 13px;
+        padding-bottom: 25px;
       }
       .contact-form {
         form {
@@ -130,10 +157,7 @@
         align-items: center;
       }
       &-socials {
-        order: 2;
-        gap: 25px;
-        align-items: center;
-        padding-bottom: 25px;
+        display: none;
       }
     }
   }

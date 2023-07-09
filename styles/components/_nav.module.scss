@@ -4,14 +4,13 @@
   width: 300px;
 }
 .nav {
-  position: fixed;
+  font-size: 1.2rem;
+  line-height: 1rem;
+  position: relative;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: "neue-haas-grotesk-display", sans-serif;
-  font-weight: 500;
-  font-style: normal;
   width: 100%;
   background-color: #fff;
   z-index: 10;
@@ -20,15 +19,12 @@
   }
   .logo {
     margin: 0;
-    font-size: 30px;
     width: fit-content;
-    padding: 15px;
   }
 
   a {
     text-decoration: none;
     color: rgb(57, 57, 57);
-    font-size: 20px;
   }
   &-mobile {
     display: none;
@@ -42,11 +38,11 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    gap: 80px;
 
     .menu-item {
       display: flex;
       align-items: center;
-      padding: 25px 20px;
       gap: 10px;
       position: relative;
       .circle {
@@ -76,7 +72,7 @@
           justify-content: center;
           align-items: center;
           margin: 0;
-          padding: 10px 25px;
+          padding-left: 20px;
         }
 
         &:hover {
@@ -133,7 +129,8 @@
     &-mobile {
       z-index: 1;
       position: absolute;
-      top: 0;
+      top: -15px;
+      left: -15px;
       display: flex;
       width: 100%;
       height: 100vh;
