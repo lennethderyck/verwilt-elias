@@ -40,6 +40,9 @@ const Archive = ({ navigation, settings, work, archive }) => {
             })}
           </div>
         </div>
+        <div className={styles["footer"]}>
+          <p>© 2023. All rights reserved</p>
+        </div>
         </div>
     </Layout>
   );
