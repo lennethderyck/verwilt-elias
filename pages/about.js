@@ -7,6 +7,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import styles from "../styles/pages/_about.module.scss";
+import ContactForm from '../components/ContactForm';
 
 const About = ({navigation, settings, about}) =>{
     return(
@@ -29,6 +30,13 @@ const About = ({navigation, settings, about}) =>{
             </div>
             
           </div>
+          <div className={styles["about-details-socials-mobile"]}>
+            <p>Email</p>
+            <div className={styles["about-details-socials-box"]}>
+            <a href = "mailto:eliasverwiltzakelijk@gmail.com" target='_blank' rel="noreferrer">eliasverwiltzakelijk@gmail.com</a>
+            </div>
+            
+          </div>
         <div className={styles["about-image"]}>
           <PrismicNextImage
                     field={settings?.data.image}
@@ -45,7 +53,14 @@ const About = ({navigation, settings, about}) =>{
             </div>
             
           </div>
-          <div className={styles["contact-form"]}>
+          <div className={styles["about-details-socials"]}>
+            <p>Email</p>
+            <div className={styles["about-details-socials-box"]}>
+            <a href = "mailto:eliasverwiltzakelijk@gmail.com" target='_blank' rel="noreferrer">eliasverwiltzakelijk@gmail.com</a>
+            </div>
+            
+          </div>
+          {/* <div className={styles["contact-form"]}>
             <form>
               <p>Contact</p>
               <div className={styles["contact-form-box"]}>
@@ -58,7 +73,7 @@ const About = ({navigation, settings, about}) =>{
 
               
             </form>
-          </div>
+          </div> */}
         </div>
         <div className={styles["footer"]}>
           <p>© 2023. All rights reserved</p>

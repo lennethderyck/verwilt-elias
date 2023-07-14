@@ -100,7 +100,8 @@
       }
       display: flex;
       p {
-        width: 150px;
+        width: 50px;
+        margin-right: 50px;
       }
 
       a {
@@ -113,6 +114,7 @@
     }
     .about-image {
       width: 80%;
+      margin: 25px 0;
     }
 
     .about-details {
