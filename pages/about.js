@@ -60,7 +60,7 @@ const About = ({navigation, settings, about}) =>{
             </div>
             
           </div>
-          {/* <div className={styles["contact-form"]}>
+          <div className={styles["contact-form"]}>
             <form>
               <p>Contact</p>
               <div className={styles["contact-form-box"]}>
@@ -73,7 +73,7 @@ const About = ({navigation, settings, about}) =>{
 
               
             </form>
-          </div> */}
+          </div>
         </div>
         <div className={styles["footer"]}>
           <p>© 2023. All rights reserved</p>
