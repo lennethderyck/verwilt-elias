@@ -9,18 +9,22 @@ import { Layout } from "../components/Layout";
 import styles from "../styles/pages/_about.module.scss";
 import emailjs from '@emailjs/browser';
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from 'react-hot-toast';
 
 const About = ({navigation, settings, about}) =>{
   const form = useRef();
-  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
 
     emailjs.sendForm('service_61m103f', 'template_0quaekn', form.current, '49jaENgnLyYTn7VcB')
       .then((result) => {
           console.log(result.text);
+          toast.success('Your message is send!');
+          reset();
       }, (error) => {
           console.log(error.text);
+          toast.error("Something went wrong!")
       });
   }
     return(
@@ -34,6 +38,10 @@ const About = ({navigation, settings, about}) =>{
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
       <main className={styles["about-container"]}>
         <div className={styles["about-details-socials-mobile"]}>
             <p>Socials</p>
