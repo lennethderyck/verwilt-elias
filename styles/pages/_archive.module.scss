@@ -4,13 +4,7 @@
   justify-content: space-between;
   height: 100%;
   padding-top: 25px;
-  .footer {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    line-height: 1rem;
-    font-size: 1.2rem;
-  }
+
   .archive {
     padding: 0 25px;
     display: flex;
@@ -31,20 +25,33 @@
     .model {
       display: flex;
       width: 300px;
-      p {
-        padding-left: 15px;
-      }
-
       .model-initials {
         display: flex;
         width: 100px;
         justify-content: space-between;
       }
+      p {
+        padding-left: 15px;
+      }
     }
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    line-height: 1rem;
+    font-size: 1.2rem;
   }
 }
 
 @media only screen and (max-width: 800px) {
+  .archive {
+    padding: 0 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
   .models {
     gap: 10px !important;
     flex-direction: column;

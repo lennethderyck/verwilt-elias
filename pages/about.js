@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicLink, PrismicText, PrismicRichText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
-import { motion, useAnimation } from "framer-motion";
+import {  PrismicText  } from "@prismicio/react";
 import React, { useEffect, useState, useRef } from "react";
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
@@ -16,12 +14,10 @@ const About = ({ navigation, settings, about }) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     reset,
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
 
     emailjs
       .sendForm(
@@ -32,12 +28,10 @@ const About = ({ navigation, settings, about }) => {
       )
       .then(
         (result) => {
-          console.log(result.text);
           toast.success("Your message is send!");
           reset();
         },
         (error) => {
-          console.log(error.text);
           toast.error("Something went wrong!");
         }
       );
@@ -68,18 +62,6 @@ const About = ({ navigation, settings, about }) => {
               rel="noreferrer"
             >
               Tiktok
-            </a>
-          </div>
-        </div>
-        <div className={styles["about-details-socials-mobile"]}>
-          <p>Email</p>
-          <div className={styles["about-details-socials-box"]}>
-            <a
-              href="mailto:eliasverwiltzakelijk@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              eliasverwiltzakelijk@gmail.com
             </a>
           </div>
         </div>

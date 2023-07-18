@@ -30,7 +30,7 @@ const Archive = ({ navigation, settings, work, archive }) => {
         </div>
         <div className={styles["models"]}>
           <p>Models</p>
-          <div className={styles["models-list"]}>
+          <div>
             {archive.data.slices[0]?.items?.map((model) => {
               return (
               <div key={model.model[0].text} className={styles["model"]}>

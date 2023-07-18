@@ -43,7 +43,7 @@ export default function Home({settings, navigation, work}) {
       navigation={navigation}
       settings={settings}
     >
-      {imageClicked ? (
+      {imageClicked && (
           <>
             <div className={styles["box"]}>
               <div className={styles["pics-box"]}>
@@ -57,8 +57,6 @@ export default function Home({settings, navigation, work}) {
             </div>{" "}
             <div></div>{" "}
           </>
-        ) : (
-          ""
         )}
       <Head>
         <title>Elias Verwilt</title>
