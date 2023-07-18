@@ -10,6 +10,7 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
@@ -28,6 +29,7 @@
     "nodemailer": "^6.9.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.2",
     "react-slick": "^0.29.0",
     "sass": "^1.57.0",
     "slick-carousel": "^1.8.1",

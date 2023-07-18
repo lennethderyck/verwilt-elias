@@ -7,9 +7,22 @@ import React, { useEffect, useState, useRef } from "react";
 import { createClient } from "../prismicio";
 import { Layout } from "../components/Layout";
 import styles from "../styles/pages/_about.module.scss";
-import ContactForm from '../components/ContactForm';
+import emailjs from '@emailjs/browser';
+import { useForm } from "react-hook-form";
 
 const About = ({navigation, settings, about}) =>{
+  const form = useRef();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+
+    emailjs.sendForm('service_61m103f', 'template_0quaekn', form.current, '49jaENgnLyYTn7VcB')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
     return(
         <Layout
       navigation={navigation}
@@ -53,26 +66,33 @@ const About = ({navigation, settings, about}) =>{
             </div>
             
           </div>
-          <div className={styles["about-details-socials"]}>
+          {/* <div className={styles["about-details-socials"]}>
             <p>Email</p>
             <div className={styles["about-details-socials-box"]}>
             <a href = "mailto:eliasverwiltzakelijk@gmail.com" target='_blank' rel="noreferrer">eliasverwiltzakelijk@gmail.com</a>
             </div>
             
-          </div>
+          </div> */}
           <div className={styles["contact-form"]}>
-            <form>
-              <p>Contact</p>
-              <div className={styles["contact-form-box"]}>
-              <div className={styles["contact-form-box-input"]}>
-                  <input type='text' name='name' placeholder='Full Name'/>
-                  <input type='text' name='name' placeholder='E-mail'/>
-              </div>
-              <textarea type='text' name='name' placeholder='Message...'/>
-              </div>
+          <p>Contact</p>
+          <form ref={form} onSubmit={handleSubmit(onSubmit)}>
+            {/* register your input into the hook by invoking the "register" function */}
+            <div className={styles["contact-form-box"]}>
+            <div className={styles["contact-form-box-input"]}>
+            <input type="name" placeholder='Name' {...register("name", { required: true })} />
+            
+            {/* include validation with required or other standard HTML validation rules */}
+            <input type="email" placeholder='Email' {...register("email", { required: true })} />
 
-              
-            </form>
+            </div>
+            </div>
+            <textarea type='text' name='name' placeholder='Message...' {...register("message", { required: true })}/>
+            
+            {/* errors will return when field validation fails  */}
+            {errors.exampleRequired && <span>This field is required</span>}
+            
+            <input type="submit" className={styles["contact-form-box-btn"]}/>
+          </form>
           </div>
         </div>
         <div className={styles["footer"]}>
