@@ -35,7 +35,18 @@
     gap: 20px;
 
     .contact-form {
+      margin-top: 25px;
       display: flex;
+
+      &-textarea {
+        position: relative;
+        p {
+          position: absolute;
+          top: -10px;
+          color: red;
+          font-size: 1rem;
+        }
+      }
       p {
         width: 150px;
       }
@@ -60,6 +71,16 @@
           gap: 15px;
           margin-bottom: 15px;
 
+          &-name {
+            width: 100%;
+            position: relative;
+            p {
+              position: absolute;
+              top: -25px;
+              color: red;
+              font-size: 1rem;
+            }
+          }
           input {
             width: 100%;
             display: flex;
@@ -84,6 +105,7 @@
           height: 100px;
           padding: 5px;
           margin-bottom: 15px;
+          margin-top: 15px;
         }
       }
     }
@@ -146,6 +168,12 @@
       }
       .contact-form {
         flex-direction: column;
+
+        &-textarea {
+          p {
+            top: -20px;
+          }
+        }
         p {
           margin-bottom: 15px;
         }
@@ -162,19 +190,29 @@
             resize: vertical;
           }
         }
-
-        &-input {
-          display: flex;
-          justify-content: space-between;
-          padding: 0 0px;
-          gap: 10px;
-
-          input {
-            width: 100%;
+        &-box {
+          &-input {
             display: flex;
-            flex-direction: column;
-            padding: 10px 30px;
-            font-size: 15px;
+            justify-content: space-between;
+            padding: 0 0px;
+            gap: 10px;
+            &-name {
+              width: 100%;
+              position: relative;
+              p {
+                position: absolute;
+                top: -20px;
+                color: red;
+                font-size: 1rem;
+              }
+            }
+            input {
+              width: 100%;
+              display: flex;
+              flex-direction: column;
+              padding: 10px 30px;
+              font-size: 15px;
+            }
           }
         }
       }
