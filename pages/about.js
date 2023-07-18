@@ -79,14 +79,14 @@ const About = ({navigation, settings, about}) =>{
             {/* register your input into the hook by invoking the "register" function */}
             <div className={styles["contact-form-box"]}>
             <div className={styles["contact-form-box-input"]}>
-            <input type="name" placeholder='Name' {...register("name", { required: true })} />
+            <input type="name" placeholder='Full Name' {...register("name", { required: true })} />
             
             {/* include validation with required or other standard HTML validation rules */}
-            <input type="email" placeholder='Email' {...register("email", { required: true })} />
+            <input type="email" placeholder='E-mail' {...register("email", { required: true })} />
 
             </div>
             </div>
-            <textarea type='text' name='name' placeholder='Message...' {...register("message", { required: true })}/>
+            <textarea type='text' name='name' placeholder='Message' {...register("message", { required: true })}/>
             
             {/* errors will return when field validation fails  */}
             {errors.exampleRequired && <span>This field is required</span>}
