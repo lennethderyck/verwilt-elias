@@ -8,7 +8,7 @@
   .archive {
     padding: 0 0px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 25px;
@@ -50,6 +50,7 @@
     padding: 0 25px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 15px;
     margin-bottom: 25px;
   }
