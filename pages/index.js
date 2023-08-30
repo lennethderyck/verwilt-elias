@@ -35,9 +35,15 @@ export default function Home({settings, navigation, work}) {
   }
 
   useEffect(() => {
-    //SwiperCore.use([EffectCoverflow, Pagination, Navigation]);
+    size.width < 800 ? setHuidigeIndex(1) : setHuidigeIndex(0)
+
+    setInitialLoad(true);
   }, []);
   const size = useWindowSize();
+
+  if(!initialLoad){
+    return null;
+  }
   return (
     <Layout
       navigation={navigation}
@@ -106,8 +112,8 @@ export default function Home({settings, navigation, work}) {
         </div>
         <div className={styles["details"]}>
           <div className={styles["first"]}>Model <p>{">"}</p></div>
-          <div className={styles["second"]}><PrismicText field={work.data.slices[size.width < 800 ? huidigeIndex +1 : huidigeIndex].primary?.title} /></div>
-          <div className={styles["third"]}>({sliceUrl(work.data.slices[size.width < 800 ? huidigeIndex +1 : huidigeIndex].primary?.image.url)})</div>
+          <div className={styles["second"]}><PrismicText field={work.data.slices[huidigeIndex].primary?.title} /></div>
+          <div className={styles["third"]}>({sliceUrl(work.data.slices[huidigeIndex].primary?.image.url)})</div>
         </div>
         <div className={styles["footer"]}>
           <p>© 2023. All rights reserved</p>
