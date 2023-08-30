@@ -71,7 +71,7 @@ export default function Home({settings, navigation, work}) {
           modules={[EffectCoverflow, Pagination]}
           observeParents
           observer
-          slidesPerView={size.width < 800 ? 2 : 3}
+          slidesPerView={3}
           centeredSlides
           loop
           effect={"coverflow"}
