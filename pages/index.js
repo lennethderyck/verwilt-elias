@@ -1,10 +1,8 @@
 import Head from 'next/head';
-import SwiperCore, { EffectCoverflow, Pagination, Navigation } from "swiper";
+import { EffectCoverflow, Pagination } from "swiper";
 import { PrismicNextImage } from "@prismicio/next";
-import { PrismicLink, PrismicText, PrismicRichText } from "@prismicio/react";
-import * as prismicH from "@prismicio/helpers";
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect, useState, useRef } from "react";
+import { PrismicText } from "@prismicio/react";
+import React, { useEffect, useState } from "react";
 import { createClient } from "../prismicio";
 import styles from "../styles/pages/_home.module.scss";
 import { Layout } from "../components/Layout";

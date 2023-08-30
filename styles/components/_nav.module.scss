@@ -14,12 +14,14 @@
   width: 100%;
   background-color: #fff;
   z-index: 10;
+  color: black;
   &-bars {
     display: none;
   }
   .logo {
     margin: 0;
     width: fit-content;
+    color: black;
   }
 
   a {
@@ -39,6 +41,7 @@
     margin: 0;
     padding: 0;
     gap: 80px;
+    color: black;
 
     .menu-item {
       display: flex;
@@ -73,6 +76,7 @@
           align-items: center;
           margin: 0;
           padding-left: 20px;
+          color: black;
         }
 
         &:hover {
