@@ -6,8 +6,9 @@
   padding-top: 25px;
 
   .archive {
-    padding: 0 25px;
+    padding: 0 0px;
     display: flex;
+    justify-content: flex-end;
     flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 25px;

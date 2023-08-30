@@ -31,13 +31,14 @@ export const Card = ( {slice} ) => {
         ) : (
           ''
         )}
-          <p>{sliceUrl(slice.primary.image.url)}</p>
+          
           <PrismicNextImage
                 field={slice.primary.image}
                 layout="fill"
                 onClick={() => activate()}
                 alt=""
               />
+              <p>{sliceUrl(slice.primary.image.url)}</p>
         </div>
   );
 };
