@@ -28,18 +28,6 @@ const Archive = ({ navigation, settings, work, archive }) => {
             return <Card key={slice.id} slice={slice} />;
           })}
         </div>
-        <div className={styles["models"]}>
-          <p>Models</p>
-          <div>
-            {archive.data.slices[0]?.items?.map((model) => {
-              return (
-              <div key={model.model[0].text} className={styles["model"]}>
-                <div className={styles["model-initials"]}><p>{onlyCapitalLetters(model.model[0].text)}</p> <p>{">"}</p></div>
-                <p><PrismicText field={model.model} /></p>
-              </div>);
-            })}
-          </div>
-        </div>
         <div className={styles["footer"]}>
           <p>© 2023. All rights reserved</p>
         </div>

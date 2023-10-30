@@ -132,7 +132,7 @@ const About = ({ navigation, settings, about }) => {
                 />
               </div>
 
-              <input type="submit" className={styles["contact-form-box-btn"]} />
+              <input type="submit" value="Send" className={styles["contact-form-box-btn"]} />
             </form>
           </div>
         </div>
