@@ -68,6 +68,7 @@ export default function Home({settings, navigation, work}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://use.typekit.net/vmj7mfo.css"/>
+        <script src="https://polyfill.io/v3/polyfill.min.js"></script>
       </Head>
       <main className={styles["main"]}>
         <div className={styles["content"]}>
