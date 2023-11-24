@@ -72,7 +72,7 @@ export default function Home({settings, navigation, work}) {
       </Head>
       <main className={styles["main"]}>
         <div className={styles["content"]}>
-        <Swiper
+        {work && <Swiper
           modules={[EffectCoverflow, Pagination]}
           observeParents
           observer
@@ -107,13 +107,13 @@ export default function Home({settings, navigation, work}) {
               );
             })}
             </div>
-        </Swiper>
+        </Swiper>}
         </div>
-        <div className={styles["details"]}>
+        {work &&<div className={styles["details"]}>
           <div className={styles["first"]}>Model <p>{">"}</p></div>
           <div className={styles["second"]}><PrismicText field={work.data.slices[huidigeIndex].primary?.title} /></div>
           <div className={styles["third"]}>({sliceUrl(work.data.slices[huidigeIndex].primary?.image.url)})</div>
-        </div>
+        </div>}
         <div className={styles["footer"]}>
           <p>© 2023. All rights reserved</p>
         </div>
